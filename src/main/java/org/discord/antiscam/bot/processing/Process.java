@@ -24,7 +24,7 @@ class Process {
 
     @PostConstruct
     void listen() {
-        var token = "OTk3NTc3NjY0NDA1NzAwODI5.GWVPUz.o1hutxmjBwRGuNy2wipHqEovzVGD3lGk-0urvA";
+        var token = "";
         var discordClient = DiscordClient.create(token);
 
         discordClient.withGateway(gateway -> {
