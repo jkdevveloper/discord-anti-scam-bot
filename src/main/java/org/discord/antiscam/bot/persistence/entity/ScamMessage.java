@@ -1,4 +1,4 @@
-package org.discord.antiscam.bot.entity;
+package org.discord.antiscam.bot.persistence.entity;
 
 public record ScamMessage(String content) implements Comparable<String> {
 

@@ -3,7 +3,7 @@ package org.discord.antiscam.bot.command;
 import discord4j.core.object.entity.Message;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.discord.antiscam.bot.ScamMessagesInMemoryRepository;
+import org.discord.antiscam.bot.persistence.ScamMessagesInMemoryRepository;
 
 import java.util.function.UnaryOperator;
 
@@ -19,17 +19,13 @@ public class CommandMessageMapper implements UnaryOperator<Message> {
         if(commandFilteringPredicate.test(message)){
             var content = message.getContent();
             var argument = extractArgument(content);
-
+            scamMessagesInMemoryRepository.addMessage(argument);
         }
 
         return message;
     }
 
     private String extractArgument(String command){
-        if(command.contains("!add")){
-            return command.replaceFirst("^[^\\s]*\\s", "");
-
-        }
-        return "dupa";
+        return command.replaceFirst("^[^\\s]*\\s", "");
     }
 }

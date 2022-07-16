@@ -1,6 +1,6 @@
-package org.discord.antiscam.bot;
+package org.discord.antiscam.bot.persistence;
 
-import org.discord.antiscam.bot.entity.ScamMessage;
+import org.discord.antiscam.bot.persistence.entity.ScamMessage;
 
 import java.util.Collection;
 import java.util.Queue;
