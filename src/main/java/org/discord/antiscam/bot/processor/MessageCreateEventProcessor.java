@@ -5,8 +5,7 @@ import discord4j.core.object.entity.Message;
 import org.reactivestreams.Publisher;
 import reactor.core.publisher.Mono;
 
-
-public class MessageCreateEventProcessor implements MessageProcessor {
+class MessageCreateEventProcessor implements MessageProcessor {
 
     @Override
     public Publisher<Message> apply(MessageCreateEvent messageEvent) {

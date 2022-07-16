@@ -1,6 +1,6 @@
-package org.discord.antiscam.bot.persistence.entity;
+package org.discord.antiscam.bot.persistence;
 
-public record ScamMessage(String content) implements Comparable<String> {
+record ScamMessage(String content) implements Comparable<String> {
 
     @Override
     public int compareTo(String o) {

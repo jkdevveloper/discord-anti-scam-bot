@@ -3,16 +3,17 @@ package org.discord.antiscam.bot.command;
 import discord4j.core.object.entity.Message;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.discord.antiscam.bot.persistence.ScamMessagesInMemoryRepository;
+import org.discord.antiscam.bot.persistence.ScamMessagesRepository;
 
+import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
 
 @Slf4j
 @RequiredArgsConstructor
-public class CommandMessageMapper implements UnaryOperator<Message> {
+class CommandMessageMapper implements UnaryOperator<Message> {
 
-    CommandFilteringPredicate commandFilteringPredicate = new CommandFilteringPredicate();
-    ScamMessagesInMemoryRepository scamMessagesInMemoryRepository = new ScamMessagesInMemoryRepository();
+    private final Predicate<Message> commandFilteringPredicate;
+    private final ScamMessagesRepository scamMessagesInMemoryRepository;
 
     @Override
     public Message apply(Message message) {

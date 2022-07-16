@@ -1,12 +1,10 @@
 package org.discord.antiscam.bot.persistence;
 
-import org.discord.antiscam.bot.persistence.entity.ScamMessage;
-
 import java.util.Collection;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-public class ScamMessagesInMemoryRepository {
+class ScamMessagesInMemoryRepository implements ScamMessagesRepository {
 
     private Queue<ScamMessage> scamMessages = new ConcurrentLinkedQueue<>();
 

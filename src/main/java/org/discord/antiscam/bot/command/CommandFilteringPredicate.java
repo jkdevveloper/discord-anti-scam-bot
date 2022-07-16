@@ -4,7 +4,7 @@ import discord4j.core.object.entity.Message;
 
 import java.util.function.Predicate;
 
-public class CommandFilteringPredicate implements Predicate<Message> {
+class CommandFilteringPredicate implements Predicate<Message> {
 
     @Override
     public boolean test(Message s) {
